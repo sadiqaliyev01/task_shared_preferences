@@ -8,26 +8,27 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Login"),
-          centerTitle: true,
-        ),
-        body: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                await prefs.setBool("login", true).then((value) {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ));
-                });
-              },
-              child: const Text("Go to Home"),
-            ),
-          ],
-        ));
+      appBar: AppBar(
+        title: const Text("Login"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool("login", true).then((value) {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ));
+              });
+            },
+            child: const Text("Go to Home"),
+          ),
+        ],
+      ),
+    );
   }
 }

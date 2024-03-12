@@ -34,7 +34,7 @@ void getInstance() async {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: isLogin == false ? const HomePage() : const LoginPage(),
+      home: isLogin == true ? const HomePage() : const LoginPage(),
     );
   }
 }
